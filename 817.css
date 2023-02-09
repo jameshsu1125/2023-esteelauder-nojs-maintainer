@@ -1,0 +1,12 @@
+.article > img,
+.article > div {
+    width: 100%;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none
+}
+.article > img {
+    pointer-events: none
+}
+
