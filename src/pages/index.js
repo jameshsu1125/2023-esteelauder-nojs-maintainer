@@ -48,7 +48,7 @@ const Pages = forwardRef((_, ref) => {
 			);
 		}
 		return '';
-	}, [page]);
+	}, [context]);
 
 	useImperativeHandle(ref, () => ({
 		getChildren() {
@@ -56,7 +56,7 @@ const Pages = forwardRef((_, ref) => {
 		},
 	}));
 
-	return <div>{Page}</div>;
+	return <div className='max-h-screen'>{Page}</div>;
 });
 
 const App = () => {
@@ -82,16 +82,14 @@ const App = () => {
 	};
 
 	return (
-		<div className='App'>
-			<Context.Provider {...{ value }}>
-				<div className='flex w-full'>
-					<Nav />
-					<Container onCopy={onCopy}>
-						<Pages ref={pagesRef} />
-					</Container>
-				</div>
-			</Context.Provider>
-		</div>
+		<Context.Provider {...{ value }}>
+			<div className='flex w-full'>
+				<Nav />
+				<Container onCopy={onCopy}>
+					<Pages ref={pagesRef} />
+				</Container>
+			</div>
+		</Context.Provider>
 	);
 };
 
