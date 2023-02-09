@@ -1,10 +1,11 @@
 import { createContext } from 'react';
-import { ACTION, PAGE } from './constant';
+import { ACTION, CDN, PAGE } from './constant';
 
 export const Context = createContext();
 
 export const initialState = {
 	[ACTION.page]: PAGE.PinkDesireCrystalClearLipBalm,
+	[ACTION.cdn]: CDN,
 };
 
 export const reducer = (state, action) => {

@@ -38,7 +38,8 @@ module.exports = () => {
 						{
 							loader: 'file-loader',
 							options: {
-								publicPath: NODE_ENV === 'production' ? publicPath : '/',
+								name: `${Folder}/image/[path][name].[ext]`,
+								context: 'src',
 							},
 						},
 					],
@@ -82,7 +83,7 @@ module.exports = () => {
 		},
 		resolve: {
 			extensions: ['*', '.js', '.jsx'],
-			alias: { arc: path.resolve(__dirname, 'src/') },
+			alias: { src: path.resolve(__dirname, 'src/') },
 		},
 		plugins: [
 			new Dotenv({

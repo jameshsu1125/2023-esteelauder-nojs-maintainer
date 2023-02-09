@@ -1,11 +1,18 @@
-import { memo, useContext, useEffect } from 'react';
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import CDNpath from 'lesca-cdn-path';
+import { memo, useContext } from 'react';
 import { Context, pageName } from '../../settings/config';
-import { ACTION, PAGE } from '../../settings/constant';
+import { ACTION, CDN, PAGE } from '../../settings/constant';
 
 const Nav = memo(() => {
 	const [, setContext] = useContext(Context);
 
-	useEffect(() => {}, []);
+	const onCND = (e) => {
+		const { checked } = e.target;
+		CDNpath.config.mode = checked ? 'cdn' : 'localhost';
+		setContext({ type: ACTION.cdn, state: { ...CDN, enabled: checked } });
+	};
+
 	return (
 		<div className='h-screen w-60 bg-base-200 p-5'>
 			<ul>
@@ -37,6 +44,12 @@ const Nav = memo(() => {
 					</li>
 				))}
 			</ul>
+			<div className='form-control mt-10'>
+				<label className='label cursor-pointer'>
+					<span className='label-text'>用官方圖片</span>
+					<input type='checkbox' className='toggle' onChange={onCND} />
+				</label>
+			</div>
 		</div>
 	);
 });

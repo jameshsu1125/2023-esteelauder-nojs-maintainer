@@ -1,7 +1,6 @@
 import { memo, useContext, useEffect } from 'react';
 import { Context, pageName } from '../../settings/config';
 import { ACTION } from '../../settings/constant';
-import './style.less';
 
 const Container = memo(({ children, onCopy }) => {
 	const [context] = useContext(Context);

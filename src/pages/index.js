@@ -1,4 +1,5 @@
 import copy from 'copy-to-clipboard';
+import CDNpath from 'lesca-cdn-path';
 import Fetcher, { contentType, formatType } from 'lesca-fetcher';
 import {
 	forwardRef,
@@ -19,6 +20,9 @@ import useStyleString from '../hooks/useStyleString';
 import { Context, initialState, reducer } from '../settings/config';
 import { ACTION, PAGE } from '../settings/constant';
 import '../settings/global.less';
+
+CDNpath.install(process.env.cdn);
+CDNpath.config.mode = 'localhost';
 
 Fetcher.install({
 	hostUrl: './',

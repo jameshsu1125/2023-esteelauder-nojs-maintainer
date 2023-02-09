@@ -1,7 +1,7 @@
-import { memo, useEffect } from 'react';
+import { memo } from 'react';
+import './style.less';
 
-const Article = memo(({ children }) => {
-	useEffect(() => {}, []);
-	return <article className='w-full'>{children}</article>;
-});
+const Article = memo(({ children }) => (
+	<article className='article w-full select-none'>{children}</article>
+));
 export default Article;
