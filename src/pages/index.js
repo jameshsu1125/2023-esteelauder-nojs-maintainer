@@ -1,17 +1,41 @@
-import { lazy, memo, Suspense, useContext, useEffect, useMemo, useReducer } from 'react';
+import copy from 'copy-to-clipboard';
+import Fetcher, { contentType, formatType } from 'lesca-fetcher';
+import {
+	forwardRef,
+	lazy,
+	Suspense,
+	useContext,
+	useEffect,
+	useImperativeHandle,
+	useMemo,
+	useReducer,
+	useRef,
+} from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ReactDOMServer from 'react-dom/server';
+import Container from '../components/container';
+import Nav from '../components/nav';
+import useStyleString from '../hooks/useStyleString';
 import { Context, initialState, reducer } from '../settings/config';
 import { ACTION, PAGE } from '../settings/constant';
 import '../settings/global.less';
 
-const Pages = memo(() => {
+Fetcher.install({
+	hostUrl: './',
+	contentType: contentType.JSON,
+	formatType: formatType.string,
+});
+
+const Pages = forwardRef((_, ref) => {
 	const [context] = useContext(Context);
 	const page = context[ACTION.page];
+	const elementRef = useRef();
 
 	const Page = useMemo(() => {
 		const [target] = Object.values(PAGE).filter((data) => data === page);
 		const Element = lazy(() => import(`.${target}/`));
+		elementRef.current = <Element />;
+
 		if (target) {
 			return (
 				<Suspense fallback='loading'>
@@ -22,28 +46,46 @@ const Pages = memo(() => {
 		return '';
 	}, [page]);
 
-	useEffect(() => {
-		console.log(page);
-	}, [page]);
-	return (
-		<>
-			<Routes>
-				<Route path='/' element={<div />} />
-			</Routes>
-			{Page}
-		</>
-	);
+	useImperativeHandle(ref, () => ({
+		getChildren() {
+			return elementRef.current;
+		},
+	}));
+
+	return <div>{Page}</div>;
 });
 
 const App = () => {
 	const [state, setState] = useReducer(reducer, initialState);
 	const value = useMemo(() => [state, setState], [state]);
+	const pagesRef = useRef();
+	const [res, fetcher] = useStyleString();
+
+	useEffect(() => {
+		if (res) {
+			const node = pagesRef.current.getChildren();
+			const html = ReactDOMServer.renderToString(node);
+			const result = `<style type="text/css">${res}</style>
+			${html}`;
+			if (copy(result)) {
+				alert('已經複製到剪貼簿');
+			}
+		}
+	}, [res]);
+
+	const onCopy = () => {
+		fetcher();
+	};
+
 	return (
 		<div className='App'>
 			<Context.Provider {...{ value }}>
-				<BrowserRouter>
-					<Pages />
-				</BrowserRouter>
+				<div className='flex w-full'>
+					<Nav />
+					<Container onCopy={onCopy}>
+						<Pages ref={pagesRef} />
+					</Container>
+				</div>
 			</Context.Provider>
 		</div>
 	);

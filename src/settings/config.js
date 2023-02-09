@@ -1,11 +1,10 @@
 import { createContext } from 'react';
-import { ACTION, PAGE, TRANSITION } from './constant';
+import { ACTION, PAGE } from './constant';
 
 export const Context = createContext();
 
 export const initialState = {
-	[ACTION.page]: PAGE.landing,
-	[ACTION.transition]: TRANSITION.unset,
+	[ACTION.page]: PAGE.PinkDesireCrystalClearLipBalm,
 };
 
 export const reducer = (state, action) => {
@@ -29,4 +28,8 @@ export const reducer = (state, action) => {
 	}
 	if (action.type) return { ...state, [action.type]: action.state };
 	return state;
+};
+
+export const pageName = {
+	[PAGE.PinkDesireCrystalClearLipBalm]: '粉嫩慾望晶透潤唇膏',
 };

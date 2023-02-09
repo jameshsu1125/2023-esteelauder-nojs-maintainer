@@ -4,9 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Meta = require('./template/template.meta');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const Folder = 'bundle'; // 自動產生檔案的folder
-const { NODE_ENV } = process.env;
+const { NODE_ENV, publicPath } = process.env;
 
 module.exports = () => {
 	const setting = {
@@ -20,6 +21,12 @@ module.exports = () => {
 					test: /\.(less|css)$/,
 					use: [
 						'style-loader',
+						{
+							loader: MiniCssExtractPlugin.loader,
+							options: {
+								esModule: false,
+							},
+						},
 						{ loader: 'css-loader', options: { esModule: false } },
 						'postcss-loader',
 						'less-loader',
@@ -30,7 +37,9 @@ module.exports = () => {
 					use: [
 						{
 							loader: 'file-loader',
-							options: { name: `${Folder}/image/[path][name].[ext]`, context: 'src' },
+							options: {
+								publicPath: NODE_ENV === 'production' ? publicPath : '/',
+							},
 						},
 					],
 				},
@@ -83,7 +92,9 @@ module.exports = () => {
 				defaults: true,
 			}),
 			new CopyPlugin({ patterns: [{ from: 'public' }] }),
-			new CleanWebpackPlugin(),
+			new MiniCssExtractPlugin({
+				linkType: 'text/css',
+			}),
 		],
 		devtool: NODE_ENV === 'production' ? false : 'cheap-module-source-map',
 		devServer: {
@@ -94,6 +105,7 @@ module.exports = () => {
 		},
 		performance: { hints: false },
 	};
+	if (NODE_ENV === 'production') setting.plugins.push(new CleanWebpackPlugin());
 	Object.keys(setting.entry).forEach((entry) => {
 		setting.plugins.push(
 			new HtmlWebpackPlugin({
