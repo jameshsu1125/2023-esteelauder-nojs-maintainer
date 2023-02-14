@@ -46,7 +46,7 @@ const Nav = memo(() => {
 			</ul>
 			<div className='form-control mt-10'>
 				<label className='label cursor-pointer'>
-					<span className='label-text'>用官方圖片</span>
+					<span className='label-text'>本地/官方路徑</span>
 					<input type='checkbox' className='toggle' onChange={onCND} />
 				</label>
 			</div>

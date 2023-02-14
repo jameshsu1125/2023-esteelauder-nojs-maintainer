@@ -14,6 +14,8 @@ import {
 } from 'react';
 import { createRoot } from 'react-dom/client';
 import ReactDOMServer from 'react-dom/server';
+import Minifier from 'string-minify';
+import Strip from 'strip-comments';
 import Container from '../components/container';
 import Nav from '../components/nav';
 import useStyleString from '../hooks/useStyleString';
@@ -69,9 +71,10 @@ const App = () => {
 		if (res) {
 			const node = pagesRef.current.getChildren();
 			const html = ReactDOMServer.renderToString(node);
-			const result = `<style type="text/css">${res}</style>
-			${html}`;
-			if (copy(result)) {
+			const result = `<style type="text/css">${res}</style>${html}`;
+			const minifierString = Minifier(Strip(result));
+
+			if (copy(minifierString)) {
 				alert('已經複製到剪貼簿');
 			}
 		}

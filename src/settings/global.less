@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.article {
+	& > img,
+	& > div {
+		@apply w-full select-none;
+	}
+
+	& > img {
+		@apply pointer-events-none;
+	}
+}

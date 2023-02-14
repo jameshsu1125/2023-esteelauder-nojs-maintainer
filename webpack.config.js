@@ -95,6 +95,7 @@ module.exports = () => {
 			new CopyPlugin({ patterns: [{ from: 'public' }] }),
 			new MiniCssExtractPlugin({
 				linkType: 'text/css',
+				filename: 'index.css',
 			}),
 		],
 		devtool: NODE_ENV === 'production' ? false : 'cheap-module-source-map',
