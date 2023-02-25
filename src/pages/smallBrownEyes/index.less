@@ -1,0 +1,127 @@
+.smallBrownEyes {
+	.row0 {
+		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+		width: @width;
+		background-image: url(@img);
+		background-size: cover;
+
+		@width: 100%;
+		@img: './img/article0-md.jpg';
+	}
+
+	@media only screen and (min-width: 1366px) {
+		.row0 {
+			padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+			width: @width;
+			background-image: url(@img);
+
+			@width: 100%;
+			@img: './img/article0-xl.jpg';
+		}
+	}
+
+	.row1 {
+		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+		width: @width;
+		background-image: url(@img);
+		background-size: cover;
+
+		@width: 100%;
+		@img: './img/article1-md.jpg';
+	}
+
+	@media only screen and (min-width: 1366px) {
+		.row1 {
+			padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+			width: @width;
+			background-image: url(@img);
+
+			@width: 100%;
+			@img: './img/article1-xl.jpg';
+		}
+	}
+
+	.row2 {
+		position: relative;
+		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+		width: @width;
+		background-image: url(@img);
+		background-size: cover;
+
+		@width: 100%;
+		@img: './img/article2-md.jpg';
+
+		& > div {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+
+			@width: 56.4%;
+			@img: './img/article2-btn0-md.jpg';
+
+			.btn {
+				position: absolute;
+				left: 50%;
+				padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+				width: @width;
+				border-radius: 0;
+				background-image: url(@img);
+				background-position: center;
+				background-size: 100%;
+				cursor: pointer;
+				pointer-events: auto;
+			}
+
+			.btn0 {
+				top: 55.3%;
+				margin-left: 0 - (@width * 0.5);
+			}
+
+			.btn1 {
+				top: 71.3%;
+				margin-left: 0 - (@width * 0.5);
+			}
+
+			.btn2 {
+				top: 86.2%;
+				margin-left: 0 - (@width * 0.5);
+			}
+		}
+	}
+
+	@media only screen and (min-width: 1366px) {
+		.row2 {
+			padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+			width: @width;
+			background-image: url(@img);
+
+			@width: 100%;
+			@img: './img/article2-xl.jpg';
+
+			& > div {
+				@width: 21.9%;
+				@img: './img/article2-btn0-xl.jpg';
+				.btn {
+					padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+					width: @width;
+					background-image: url(@img);
+				}
+				.btn0 {
+					top: 71.3%;
+					margin-left: 0 - (@width * 0.5) - 25.5%;
+				}
+				.btn1 {
+					top: 71.3%;
+					margin-left: 0 - (@width * 0.5);
+				}
+				.btn2 {
+					top: 71.3%;
+					margin-left: 0 - (@width * 0.5) + 25.5%;
+				}
+			}
+		}
+	}
+}

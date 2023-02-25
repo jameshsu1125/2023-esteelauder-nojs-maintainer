@@ -8,7 +8,7 @@ const Container = memo(({ children, onCopy }) => {
 
 	return (
 		<main className='flex w-full flex-1 justify-center overflow-y-scroll'>
-			<div className='w-full max-w-5xl bg-gray-100'>
+			<div className='w-full max-w-[1366px] bg-gray-100'>
 				<div className='flex w-full flex-row items-center justify-between bg-primary p-3 text-base-100'>
 					<span className='flex flex-row items-center text-xl'>
 						<svg

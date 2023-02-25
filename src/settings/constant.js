@@ -4,6 +4,8 @@ export const ACTION = {
 };
 
 export const PAGE = {
+	smallBrownEyes: '/smallBrownEyes',
+	softMistVelvetLipGlaze: '/softMistVelvetLipGlaze',
 	PinkDesireCrystalClearLipBalm: '/pinkDesireCrystalClearLipBalm',
 };
 

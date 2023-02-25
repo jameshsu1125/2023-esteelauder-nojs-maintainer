@@ -4,7 +4,7 @@ import { ACTION, CDN, PAGE } from './constant';
 export const Context = createContext();
 
 export const initialState = {
-	[ACTION.page]: PAGE.PinkDesireCrystalClearLipBalm,
+	[ACTION.page]: PAGE.smallBrownEyes,
 	[ACTION.cdn]: CDN,
 };
 
@@ -32,5 +32,7 @@ export const reducer = (state, action) => {
 };
 
 export const pageName = {
+	[PAGE.smallBrownEyes]: '小棕眼',
+	[PAGE.softMistVelvetLipGlaze]: '柔霧絲絨唇釉',
 	[PAGE.PinkDesireCrystalClearLipBalm]: '粉嫩慾望晶透潤唇膏',
 };

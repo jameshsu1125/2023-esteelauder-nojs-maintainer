@@ -7,6 +7,9 @@ module.exports = {
 		themes: ['bumblebee'],
 	},
 	theme: {
+		screens: {
+			xl: '1366px',
+		},
 		container: { screen: {} },
 	},
 	plugins: [require('@tailwindcss/typography'), require('daisyui')],

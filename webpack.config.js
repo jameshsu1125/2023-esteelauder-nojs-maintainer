@@ -38,7 +38,7 @@ module.exports = () => {
 						{
 							loader: 'file-loader',
 							options: {
-								name: `${Folder}/image/[path][name].[ext]`,
+								name: `image/[path][name].[ext]`,
 								context: 'src',
 							},
 						},

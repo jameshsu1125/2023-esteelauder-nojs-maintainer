@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import Article from '../../components/article';
 
-const PinkDesireCrystalClearLipBalm = memo(() => (
-	<main className='pinkDesireCrystalClearLipBalm flex w-full justify-center bg-[#010619]'>
+const SoftMistVelvetLipGlaze = memo(() => (
+	<main className='softMistVelvetLipGlaze flex w-full justify-center bg-[#010619]'>
 		<div className='w-full max-w-[1366px]'>
 			<div className='w-full'>
 				<Article>
@@ -15,4 +15,4 @@ const PinkDesireCrystalClearLipBalm = memo(() => (
 		</div>
 	</main>
 ));
-export default PinkDesireCrystalClearLipBalm;
+export default SoftMistVelvetLipGlaze;
