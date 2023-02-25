@@ -43,7 +43,26 @@ const Nav = memo(() => {
 						{pageName[e]}
 					</li>
 				))}
+				<li className='link mt-5 flex w-full flex-row overflow-hidden text-ellipsis whitespace-nowrap underline-offset-4'>
+					<svg
+						className='mr-1 h-6 w-6'
+						fill='currentColor'
+						viewBox='0 0 20 20'
+						xmlns='http://www.w3.org/2000/svg'
+						aria-hidden='true'
+					>
+						<path
+							clipRule='evenodd'
+							fillRule='evenodd'
+							d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
+						/>
+					</svg>
+					<a href='image.zip' target='_blank'>
+						下載圖片資源包
+					</a>
+				</li>
 			</ul>
+
 			<div className='form-control mt-10 hidden'>
 				<label className='label cursor-pointer'>
 					<span className='label-text'>本地/官方路徑</span>
