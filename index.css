@@ -1476,6 +1476,9 @@ html {
   border-bottom-right-radius: 1rem;
   border-bottom-right-radius: var(--rounded-box, 1rem);
 }
+.pointer-events-none {
+  pointer-events: none;
+}
 .absolute {
   position: absolute;
 }
@@ -1501,6 +1504,9 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+.hidden {
+  display: none;
 }
 .h-4 {
   height: 1rem;
@@ -1529,8 +1535,8 @@ html {
 .w-full {
   width: 100%;
 }
-.max-w-5xl {
-  max-width: 64rem;
+.max-w-\[1366px\] {
+  max-width: 1366px;
 }
 .flex-1 {
   -webkit-box-flex: 1;
@@ -1579,6 +1585,11 @@ html {
 .whitespace-nowrap {
   white-space: nowrap;
 }
+.bg-\[\#010619\] {
+  --tw-bg-opacity: 1;
+  background-color: rgba(1, 6, 25, 1);
+  background-color: rgb(1 6 25 / var(--tw-bg-opacity));
+}
 .bg-base-200 {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--b2, var(--b1)) / 1);
@@ -1626,5 +1637,209 @@ html {
 .filter {
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.smallBrownEyes .row0 {
+  padding-bottom: 326.8%;
+  width: 100%;
+  background-image: url(./image/pages/smallBrownEyes/img/article0-md.jpg);
+  background-size: cover;
+}
+@media only screen and (min-width: 1366px) {
+  .smallBrownEyes .row0 {
+    padding-bottom: 106.66178624%;
+    width: 100%;
+    background-image: url(./image/pages/smallBrownEyes/img/article0-xl.jpg);
+  }
+}
+.smallBrownEyes .row1 {
+  padding-bottom: 238%;
+  width: 100%;
+  background-image: url(./image/pages/smallBrownEyes/img/article1-md.jpg);
+  background-size: cover;
+}
+@media only screen and (min-width: 1366px) {
+  .smallBrownEyes .row1 {
+    padding-bottom: 73.06002928%;
+    width: 100%;
+    background-image: url(./image/pages/smallBrownEyes/img/article1-xl.jpg);
+  }
+}
+.smallBrownEyes .row2 {
+  position: relative;
+  padding-bottom: 278.13333333%;
+  width: 100%;
+  background-image: url(./image/pages/smallBrownEyes/img/article2-md.jpg);
+  background-size: cover;
+}
+.smallBrownEyes .row2 > div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.smallBrownEyes .row2 > div .btn {
+  position: absolute;
+  left: 50%;
+  padding-bottom: 9.17511962%;
+  width: 56.4%;
+  border-radius: 0;
+  background-image: url(./image/pages/smallBrownEyes/img/article2-btn0-md.jpg);
+  background-position: center;
+  background-size: 100%;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.smallBrownEyes .row2 > div .btn0 {
+  top: 55.3%;
+  margin-left: -28.2%;
+}
+.smallBrownEyes .row2 > div .btn1 {
+  top: 71.3%;
+  margin-left: -28.2%;
+}
+.smallBrownEyes .row2 > div .btn2 {
+  top: 86.2%;
+  margin-left: -28.2%;
+}
+@media only screen and (min-width: 1366px) {
+  .smallBrownEyes .row2 {
+    padding-bottom: 94.94875549%;
+    width: 100%;
+    background-image: url(./image/pages/smallBrownEyes/img/article2-xl.jpg);
+  }
+  .smallBrownEyes .row2 > div .btn {
+    padding-bottom: 3.08657718%;
+    width: 21.9%;
+    background-image: url(./image/pages/smallBrownEyes/img/article2-btn0-xl.jpg);
+  }
+  .smallBrownEyes .row2 > div .btn0 {
+    top: 71.3%;
+    margin-left: -36.45%;
+  }
+  .smallBrownEyes .row2 > div .btn1 {
+    top: 71.3%;
+    margin-left: -10.95%;
+  }
+  .smallBrownEyes .row2 > div .btn2 {
+    top: 71.3%;
+    margin-left: 14.55%;
+  }
+}
+.softMistVelvetLipGlaze .row0 {
+  padding-bottom: 377.34375%;
+  width: 100%;
+  background-image: url(./image/pages/softMistVelvetLipGlaze/img/article0-md.jpg);
+  background-size: cover;
+}
+@media only screen and (min-width: 1366px) {
+  .softMistVelvetLipGlaze .row0 {
+    padding-bottom: 127.37920937%;
+    width: 100%;
+    background-image: url(./image/pages/softMistVelvetLipGlaze/img/article0-xl.jpg);
+  }
+}
+.softMistVelvetLipGlaze .row1 {
+  padding-bottom: 434.53125%;
+  width: 100%;
+  background-image: url(./image/pages/softMistVelvetLipGlaze/img/article1-md.jpg);
+  background-size: cover;
+}
+@media only screen and (min-width: 1366px) {
+  .softMistVelvetLipGlaze .row1 {
+    padding-bottom: 112.1522694%;
+    width: 100%;
+    background-image: url(./image/pages/softMistVelvetLipGlaze/img/article1-xl.jpg);
+  }
+}
+.softMistVelvetLipGlaze .row2 {
+  padding-bottom: 350.15625%;
+  width: 100%;
+  background-image: url(./image/pages/softMistVelvetLipGlaze/img/article2-md.jpg);
+  background-size: cover;
+}
+@media only screen and (min-width: 1366px) {
+  .softMistVelvetLipGlaze .row2 {
+    padding-bottom: 201.97657394%;
+    width: 100%;
+    background-image: url(./image/pages/softMistVelvetLipGlaze/img/article2-xl.jpg);
+  }
+}
+.softMistVelvetLipGlaze .row3 {
+  padding-bottom: 297.8125%;
+  width: 100%;
+  background-image: url(./image/pages/softMistVelvetLipGlaze/img/article3-md.jpg);
+  background-size: cover;
+}
+@media only screen and (min-width: 1366px) {
+  .softMistVelvetLipGlaze .row3 {
+    padding-bottom: 93.11859444%;
+    width: 100%;
+    background-image: url(./image/pages/softMistVelvetLipGlaze/img/article3-xl.jpg);
+  }
+}
+.pinkDesireCrystalClearLipBalm .row0 {
+  padding-bottom: 150.625%;
+  width: 100%;
+  background-image: url(./image/pages/pinkDesireCrystalClearLipBalm/img/article0-md.jpg);
+  background-size: cover;
+}
+@media only screen and (min-width: 1366px) {
+  .pinkDesireCrystalClearLipBalm .row0 {
+    padding-bottom: 60.32210835%;
+    width: 100%;
+    background-image: url(./image/pages/pinkDesireCrystalClearLipBalm/img/article0-xl.jpg);
+  }
+}
+.pinkDesireCrystalClearLipBalm .row1 {
+  padding-bottom: 240.625%;
+  width: 100%;
+  background-image: url(./image/pages/pinkDesireCrystalClearLipBalm/img/article1-md.jpg);
+  background-size: cover;
+}
+@media only screen and (min-width: 1366px) {
+  .pinkDesireCrystalClearLipBalm .row1 {
+    padding-bottom: 60.39531479%;
+    width: 100%;
+    background-image: url(./image/pages/pinkDesireCrystalClearLipBalm/img/article1-xl.jpg);
+  }
+}
+.pinkDesireCrystalClearLipBalm .row2 {
+  padding-bottom: 458.90625%;
+  width: 100%;
+  background-image: url(./image/pages/pinkDesireCrystalClearLipBalm/img/article2-md.jpg);
+  background-size: cover;
+}
+@media only screen and (min-width: 1366px) {
+  .pinkDesireCrystalClearLipBalm .row2 {
+    padding-bottom: 85.21229868%;
+    width: 100%;
+    background-image: url(./image/pages/pinkDesireCrystalClearLipBalm/img/article2-xl.jpg);
+  }
+}
+.pinkDesireCrystalClearLipBalm .row3 {
+  padding-bottom: 197.1875%;
+  width: 100%;
+  background-image: url(./image/pages/pinkDesireCrystalClearLipBalm/img/article3-md.jpg);
+  background-size: cover;
+}
+@media only screen and (min-width: 1366px) {
+  .pinkDesireCrystalClearLipBalm .row3 {
+    padding-bottom: 104.6852123%;
+    width: 100%;
+    background-image: url(./image/pages/pinkDesireCrystalClearLipBalm/img/article3-xl.jpg);
+  }
+}
+.article > img,
+.article > div {
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.article > img {
+  pointer-events: none;
 }
 
