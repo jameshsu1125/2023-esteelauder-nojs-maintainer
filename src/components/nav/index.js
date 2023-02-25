@@ -14,7 +14,7 @@ const Nav = memo(() => {
 	};
 
 	return (
-		<div className='h-screen w-60 bg-base-200 p-5'>
+		<div className='hidden h-screen w-60 bg-base-200 p-5 xl:block'>
 			<ul>
 				{Object.values(PAGE).map((e) => (
 					<li
