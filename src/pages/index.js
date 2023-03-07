@@ -6,7 +6,6 @@ import {
 	lazy,
 	Suspense,
 	useContext,
-	useEffect,
 	useImperativeHandle,
 	useMemo,
 	useReducer,
@@ -18,7 +17,6 @@ import Minifier from 'string-minify';
 import Strip from 'strip-comments';
 import Container from '../components/container';
 import Nav from '../components/nav';
-import useStyleString from '../hooks/useStyleString';
 import { Context, initialState, reducer } from '../settings/config';
 import { ACTION, PAGE } from '../settings/constant';
 import '../settings/global.less';
@@ -65,23 +63,14 @@ const App = () => {
 	const [state, setState] = useReducer(reducer, initialState);
 	const value = useMemo(() => [state, setState], [state]);
 	const pagesRef = useRef();
-	const [res, fetcher] = useStyleString();
-
-	useEffect(() => {
-		if (res) {
-			const node = pagesRef.current.getChildren();
-			const html = ReactDOMServer.renderToString(node);
-			const result = `<style type="text/css">${res}</style>${html}`;
-			const minifierString = Minifier(Strip(result));
-
-			if (copy(minifierString)) {
-				alert('已經複製到剪貼簿');
-			}
-		}
-	}, [res]);
 
 	const onCopy = () => {
-		fetcher();
+		const node = pagesRef.current.getChildren();
+		const html = ReactDOMServer.renderToString(node);
+		const minifierString = Minifier(Strip(html));
+		if (copy(minifierString)) {
+			alert('已經複製到剪貼簿');
+		}
 	};
 
 	return (
