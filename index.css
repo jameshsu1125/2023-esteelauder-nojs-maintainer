@@ -1687,10 +1687,13 @@ html {
   left: 50%;
   padding-bottom: 9.17511962%;
   width: 56.4%;
+  border: none;
   border-radius: 0;
+  background-color: transparent;
   background-image: url('https://www.esteelauder.com.tw/media/export/cms_2.0/SPP/2023_anr_eye/img/article2-btn0-md.jpg');
   background-position: center;
   background-size: 100%;
+  background-repeat: no-repeat;
   cursor: pointer;
   pointer-events: auto;
 }
