@@ -68,7 +68,9 @@ const App = () => {
 		const node = pagesRef.current.getChildren();
 		const html = ReactDOMServer.renderToString(node);
 		const minifierString = Minifier(Strip(html));
-		if (copy(minifierString)) {
+		const cssLink =
+			'<link href="https://www.esteelauder.com.tw/media/export/cms_2.0/SPP/2023_crystal_lip/index.css" rel="stylesheet">';
+		if (copy(cssLink + minifierString)) {
 			alert('已經複製到剪貼簿');
 		}
 	};
